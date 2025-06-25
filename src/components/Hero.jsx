@@ -4,7 +4,6 @@ import { Box, Container, Typography, useMediaQuery } from '@mui/material';
 const Hero = ({ blok }) => {
   const matches = useMediaQuery('(max-width:600px)');
 
-  console.log(matches)
   return (
     <Box sx={{ py: 4, px: 2, 
     backgroundColor: 'rgb(50, 50, 50)', 
