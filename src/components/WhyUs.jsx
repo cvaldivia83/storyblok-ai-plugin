@@ -1,21 +1,29 @@
 import { Box, Typography, Container, Grid } from '@mui/material';
 import { StoryblokComponent } from '@storyblok/react';
+import { useMediaQuery } from '@mui/material';
 
 const WhyUs = ({blok}) => {
-  return (
-    <Box sx={{ py: 10, backgroundColor: '#FAFAFA' }}>
-      <Container>
-        <Typography variant="h4" component="h2" gutterBottom textAlign="center">
+
+  const matches = useMediaQuery('(min-width: 600px)');
+
+  const matchesMd = useMediaQuery('(min-width: 700px)');
+
+  console.log(matches);
+
+  return (  
+    <Box sx={{ py: 10, px: 4, backgroundColor: '#FAFAFA' }}>
+      <Container padding={2}>
+        <Typography variant="h2" component="h2" gutterBottom textAlign="center" fontWeight={600}>
           {blok.headline}
         </Typography>
 
         {blok.intro && (
-          <Typography variant="subtitle1" textAlign="center" mb={4}>{blok.intro}</Typography>
+          <Typography variant="subtitle1" textAlign="center" fontSize={matches ? 20 : 16} mt={4} mb={8}>{blok.intro}</Typography>
         )}
 
-        <Grid container spacing={4}>
+        <Grid container spacing={2} marginTop={10}>
           {blok.features?.map((feature) => (
-            <Grid item>
+            <Grid size={(matches && 4) && (matchesMd && 6)} key={feature._uid}>
               <StoryblokComponent blok={feature} />
             </Grid>
           ))}
