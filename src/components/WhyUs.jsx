@@ -4,7 +4,7 @@ import { useMediaQuery } from '@mui/material';
 
 const WhyUs = ({blok}) => {
 
-  const matches = useMediaQuery('(min-width: 600px)');
+  const matches = useMediaQuery('(min-width: 800px)');
 
   const matchesMd = useMediaQuery('(min-width: 700px)');
 
@@ -23,7 +23,7 @@ const WhyUs = ({blok}) => {
 
         <Grid container spacing={2} marginTop={10}>
           {blok.features?.map((feature) => (
-            <Grid size={(matches && 4) && (matchesMd && 6)} key={feature._uid}>
+            <Grid size={(matches && 4) || (matchesMd && 6)} key={feature._uid}>
               <StoryblokComponent blok={feature} />
             </Grid>
           ))}
