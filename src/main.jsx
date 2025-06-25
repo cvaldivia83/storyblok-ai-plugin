@@ -11,6 +11,7 @@ import Hero from './components/Hero';
 import Page from './components/Page';
 import WhyUs from './components/WhyUs';
 import FeatureItem from './components/FeatureItem';
+import Cta from './components/Cta';
 import './index.css';
 
 
@@ -29,6 +30,7 @@ storyblokInit({
     Hero: Hero,
     WhyUs: WhyUs,
     FeatureItem: FeatureItem,
+    cta: Cta,
     fallback: Fallback,
   }
 });
