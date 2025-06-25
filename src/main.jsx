@@ -9,6 +9,8 @@ import App from './App';
 import Fallback from './components/Fallback';
 import Hero from './components/Hero';
 import Page from './components/Page';
+import WhyUs from './components/WhyUs';
+import FeatureItem from './components/FeatureItem';
 import './index.css';
 
 
@@ -25,6 +27,8 @@ storyblokInit({
   components: {
     page: Page,
     Hero: Hero,
+    WhyUs: WhyUs,
+    FeatureItem: FeatureItem,
     fallback: Fallback,
   }
 });
