@@ -3,13 +3,34 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@fontsource/roboto/900.css';
-import { StrictMode } from 'react';
+import { apiPlugin, storyblokInit } from '@storyblok/react';
 import { createRoot } from 'react-dom/client';
-import App from './App.jsx';
+import App from './App';
+import Fallback from './components/Fallback';
+import Hero from './components/Hero';
+import Page from './components/Page';
 import './index.css';
 
+
+import './index.css';
+
+
+
+storyblokInit({
+  accessToken: import.meta.env.VITE_STORYBLOK_ACCESS_TOKEN,
+  use: [apiPlugin],
+  apiOptions: {
+    region: 'eu',   
+  }, 
+  components: {
+    page: Page,
+    Hero: Hero,
+    fallback: Fallback,
+  }
+});
+
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  
     <App />
-  </StrictMode>,
+ 
 )
