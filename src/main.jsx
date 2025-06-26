@@ -13,10 +13,9 @@ import WhyUs from './components/WhyUs';
 import FeatureItem from './components/FeatureItem';
 import Cta from './components/Cta';
 import './index.css';
-
-
-import './index.css';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import Tool from './pages/Tool';
 
 
 storyblokInit({
@@ -36,7 +35,14 @@ storyblokInit({
 });
 
 createRoot(document.getElementById('root')).render(
-  
-    <App />
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={ <App /> } />
+        <Route path="/start" element={ <Tool /> } />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+   
  
 )
