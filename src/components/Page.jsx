@@ -1,7 +1,7 @@
 import { StoryblokComponent } from "@storyblok/react";
 
 const Page = ({ blok }) => {
-  console.log(blok.body)
+  
   return (
     <main>
     
