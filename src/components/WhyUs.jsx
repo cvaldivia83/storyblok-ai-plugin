@@ -2,16 +2,15 @@ import { Box, Typography, Container, Grid } from '@mui/material';
 import { StoryblokComponent } from '@storyblok/react';
 import { useMediaQuery } from '@mui/material';
 
+
 const WhyUs = ({blok}) => {
 
   const matches = useMediaQuery('(min-width: 800px)');
 
   const matchesMd = useMediaQuery('(min-width: 700px)');
 
-  console.log(matches);
-
   return (  
-    <Box sx={{ py: 10, px: 4, backgroundColor: '#FAFAFA' }}>
+    <Box sx={{ py: 6, px: 4, backgroundColor: '#FAFAFA' }}>
       <Container padding={2}>
         <Typography variant="h2" component="h2" gutterBottom textAlign="center" fontWeight={600}>
           {blok.headline}
