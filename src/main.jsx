@@ -12,6 +12,12 @@ import Page from './components/Page';
 import WhyUs from './components/WhyUs';
 import FeatureItem from './components/FeatureItem';
 import Cta from './components/Cta';
+import Result from './pages/Result';
+import MultiStepForm from './components/MultiStepForm';
+import FormStepBusinessInfo from './components/FormStepBusinessInfo';
+import FormStepProductDetails from './components/FormStepProductDetails';
+import FormStepBudget from './components/FormStepBudget';
+import FormStepFinish from './components/FormStepFinish';
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
@@ -31,6 +37,11 @@ storyblokInit({
     FeatureItem: FeatureItem,
     cta: Cta,
     fallback: Fallback,
+    MultiStepForm: MultiStepForm,
+    FormStepBusinessInfo: FormStepBusinessInfo,
+    FormStepProductDetails: FormStepProductDetails,
+    FormStepBudget: FormStepBudget,
+    FormStepFinish: FormStepFinish
   }
 });
 
@@ -40,6 +51,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={ <App /> } />
         <Route path="/start" element={ <Tool /> } />
+        <Route path="/result" element={ <Result /> } />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
